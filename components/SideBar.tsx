@@ -17,7 +17,7 @@ const SideBar = () => {
         orderBy("createdAt", "desc")
       )
   );
-  console.log(chats);
+  // console.log(chats);
   return (
     <div className=" p-2 flex flex-col h-full min-h-screen">
       <div className="flex-1">
