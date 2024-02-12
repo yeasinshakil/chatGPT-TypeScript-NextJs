@@ -6,6 +6,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "@/firebase";
 import ChatRow from "./ChatRow";
 import ModelSelection from "./ModelSelection";
+import Image from "next/image";
 
 const SideBar = () => {
   const { data: session } = useSession();
@@ -13,10 +14,10 @@ const SideBar = () => {
 
   const [chats, loading, error] = useCollection(
     session &&
-      query(
-        collection(db, "users", session?.user?.email!, "chats"),
-        orderBy("createdAt", "desc")
-      )
+    query(
+      collection(db, "users", session?.user?.email!, "chats"),
+      orderBy("createdAt", "desc")
+    )
   );
   // console.log(chats);
   return (
@@ -37,7 +38,7 @@ const SideBar = () => {
       </div>
 
       {session && (
-        <img
+        <Image
           onClick={() => signOut()}
           src={session?.user?.image!}
           alt="Profile pic"

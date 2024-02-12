@@ -24,7 +24,9 @@ const ChatRow = ({ id }: Props) => {
     if (!pathName) return;
     setActive(pathName.includes(id));
   }, [pathName]);
-
+  useEffect(() => {
+    router.replace("/");
+  }, [session?.user?.email]);
   const removeChat = async () => {
     await deleteDoc(doc(db, "users", session?.user?.email!, "chats", id));
     router.replace("/");

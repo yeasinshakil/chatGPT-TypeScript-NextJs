@@ -32,6 +32,9 @@ const Chat = ({ chatId }: Props) => {
             Type in a prompt below to get started!
           </p>
           <ArrowDownCircleIcon className="h-10 w-10 mx-auto mt-5 text-white animate-bounce" />
+          <p className=" flex items-center justify-center mt-24 mb-5 p-3 text-3xl text-white font-bold tracking-wider">
+            How can I help you today?
+          </p>
         </>
       )}
       {messages?.docs.map((message) => (
