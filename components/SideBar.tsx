@@ -41,6 +41,8 @@ const SideBar = () => {
         <Image
           onClick={() => signOut()}
           src={session?.user?.image!}
+          width={100}
+          height={100}
           alt="Profile pic"
           className="h-12 w-12 rounded-full cursor-pointer mx-auto
                 mb-2 hover:opacity-50"
